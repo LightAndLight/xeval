@@ -1,0 +1,34 @@
+cabal-version:      3.0
+name:               xeval
+version:            0.1.0.0
+license:            MIT
+license-file:       LICENSE
+author:             Isaac Elliott
+maintainer:         isaace71295@gmail.com
+category:           System
+build-type:         Simple
+
+common warnings
+    ghc-options: -Wall
+
+executable xeval
+    import:           warnings
+    main-is:          Main.hs
+    other-modules:
+        Errors
+        Expr
+        Logging
+        X11Atoms
+        X11Event
+        X11Property
+        X11Selection
+    build-depends:
+        X11,
+        base >=4.17 && <5,
+        bytestring,
+        mtl,
+        optparse-applicative,
+        time,
+        utf8-string
+    hs-source-dirs:   app
+    default-language: Haskell2010
